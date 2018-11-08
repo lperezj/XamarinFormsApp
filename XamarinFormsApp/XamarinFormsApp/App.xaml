@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:XamarinFormsApp.ViewModel;assembly=XamarinFormsApp"
+             x:Class="XamarinFormsApp.App">
+    <Application.Resources>
+        <Style x:Key="HeaderTitleStyle"
+               TargetType="Label">
+            <Setter Property="HorizontalOptions"
+                    Value="Center">
+            </Setter>
+            <Setter Property="VerticalOptions"
+                    Value="Center">
+            </Setter>
+            <Setter Property="FontSize"
+                    Value="30">
+            </Setter>
+            <Setter Property="FontAttributes"
+                    Value="Bold">
+            </Setter>
+        </Style>
+        <Style x:Key="MainTitleStyle"
+               TargetType="Label">
+            <Setter Property="HorizontalOptions"
+                    Value="Center">
+            </Setter>
+            <Setter Property="VerticalOptions"
+                    Value="Center">
+            </Setter>
+            <Setter Property="FontSize"
+                    Value="20">
+            </Setter>
+            <Setter Property="FontAttributes"
+                    Value="Bold">
+            </Setter>
+        </Style>
+        <Style x:Key="SubTilteStyle"
+               TargetType="Label"
+               BasedOn="{StaticResource MainTitleStyle}">
+            <Setter Property="FontSize"
+                    Value="15">
+            </Setter>
+            <Setter Property="FontAttributes"
+                    Value="None">
+            </Setter>
+        </Style>
+        <Style x:Key="NormalTextStyle"
+               TargetType="Label"
+               BasedOn="{StaticResource SubTilteStyle}">
+            <Setter Property="FontSize"
+                    Value="12">
+            </Setter>
+        </Style>
+        <viewModel:ViewModelLocator x:Key="Locator" />
+    </Application.Resources>
+</Application>
