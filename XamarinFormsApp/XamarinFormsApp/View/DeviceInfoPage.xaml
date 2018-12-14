@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinFormsApp.View.DeviceInfoPage"
+             BindingContext="{Binding Source={StaticResource Locator}, Path=DeviceInfoVm}">
+    <ContentPage.Content>
+       <Grid Margin="30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Text="Info Device" Grid.ColumnSpan="2" HorizontalTextAlignment="Center"/>
+            <Label Text="Device Info Name"
+                   Grid.Row="1" Grid.Column="0"/>
+            <Label Text="{Binding CurrentDeviceInfoName}"
+                   Grid.Row="1" Grid.Column="1"/>
+            <Label Text="Device Info Manufacturer"
+                   Grid.Row="2" Grid.Column="0"/>
+            <Label Text="{Binding CurrentDeviceInfoManufacturer}" 
+                   Grid.Row="2" Grid.Column="1" />
+            <Label Text="Device Info Version"
+                   Grid.Row="3" Grid.Column="0"/>
+            <Label Text="{Binding CurrentDeviceInfoVersion}" 
+                   Grid.Row="3" Grid.Column="1" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

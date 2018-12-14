@@ -11,7 +11,6 @@
     {
         #region Private Fields
 
-        private IDialogService dialogService;
         private string reverseString;
 
         private string myText;
@@ -39,9 +38,8 @@
 
         #region Public Constructors
 
-        public ReverseStringViewModel(IDialogService dialogService)
+        public ReverseStringViewModel()
         {
-            this.dialogService = dialogService;
             this.ReverseCommand = new RelayCommand(async () => await this.ReverseCommandExectue());
             this.ThrowCommand = new RelayCommand(() => throw new Exception("La app ha fallado voluntariamente :-)"));
         }

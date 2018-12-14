@@ -12,13 +12,12 @@
 
         public static class NavigationPages
         {
-            #region Public Fields
+            public const string MainPage = "MainPage";
 
             public const string ReverseStringPage = "ReverseStringPage";
 
-            #endregion
+            public const string DeviceInfoPage = "DeviceInfoPage";
 
-            public const string MainPage = "MainPage";
         }
 
         #endregion

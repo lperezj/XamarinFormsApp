@@ -49,6 +49,8 @@ namespace XamarinFormsApp.ViewModel
 
         public ReverseStringViewModel ReverseStringVm => ServiceLocator.Current.GetInstance<ReverseStringViewModel>();
 
+        public DeviceInfoPageViewModel DeviceInfoVm => ServiceLocator.Current.GetInstance<DeviceInfoPageViewModel>();
+
         #endregion
 
         #region Public Methods
@@ -64,6 +66,7 @@ namespace XamarinFormsApp.ViewModel
 
             nav.Configure(AppConstants.NavigationPages.MainPage, typeof(MainPage));
             nav.Configure(AppConstants.NavigationPages.ReverseStringPage, typeof(ReverseStringPage));
+            nav.Configure(AppConstants.NavigationPages.DeviceInfoPage, typeof(DeviceInfoPage));
 
             return nav;
         }
@@ -78,6 +81,7 @@ namespace XamarinFormsApp.ViewModel
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<ParentViewModel>(true);
             SimpleIoc.Default.Register<ReverseStringViewModel>();
+            SimpleIoc.Default.Register<DeviceInfoPageViewModel>();
         }
 
         public static void SetLocatorProvider()

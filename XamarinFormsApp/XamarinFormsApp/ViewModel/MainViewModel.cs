@@ -47,6 +47,16 @@ namespace XamarinFormsApp.ViewModel
 
         #endregion
 
+        #region Public Properties
+
+        public ICommand GoToReverseStringPageCommand { get; }
+
+        public ICommand GoToDeviceInfoPageCommand { get; }
+
+        public ICommand OnAppearingCommand { get; }
+
+        #endregion
+
         #region Public Constructors
 
         public MainViewModel(IMessenger messenger, INavigationService navigationService, IDialogService dialogService)
@@ -54,21 +64,23 @@ namespace XamarinFormsApp.ViewModel
         {
             this.OnAppearingCommand = new Command(async () => await this.OnAppearing());
             this.GoToReverseStringPageCommand = new Command(this.NavigateToReverse);
+            this.GoToDeviceInfoPageCommand = new Command(this.NavigateToDeviceInfo);
         }
+
+
 
         private void NavigateToReverse()
         {
             this.NavigationService.NavigateTo(AppConstants.NavigationPages.ReverseStringPage);
         }
 
-        #endregion
-
-        #region Public Properties
-
-        public ICommand GoToReverseStringPageCommand { get; }
-
-        public ICommand OnAppearingCommand { get; }
+        private void NavigateToDeviceInfo()
+        {
+            this.NavigationService.NavigateTo(AppConstants.NavigationPages.DeviceInfoPage);
+        }
 
         #endregion
+
+        
     }
 }

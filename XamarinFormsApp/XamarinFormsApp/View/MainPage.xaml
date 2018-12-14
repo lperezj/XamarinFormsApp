@@ -17,6 +17,9 @@
             <Button Command="{Binding GoToReverseStringPageCommand}"
                     Text="Go to Test String Example" />
 
+            <Button Command="{Binding GoToDeviceInfoPageCommand}"
+                    Text="Go to Device Info" />
+
         </StackLayout>
     </ScrollView>
 </ContentPage>
