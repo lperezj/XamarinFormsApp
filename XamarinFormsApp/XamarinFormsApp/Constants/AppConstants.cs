@@ -18,6 +18,8 @@
 
             public const string DeviceInfoPage = "DeviceInfoPage";
 
+            public const string ListViewWithNavigationItemPage = "ListViewWithNavigationItemPage";
+
         }
 
         #endregion
