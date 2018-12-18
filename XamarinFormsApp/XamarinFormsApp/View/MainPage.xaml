@@ -20,6 +20,9 @@
             <Button Command="{Binding GoToDeviceInfoPageCommand}"
                     Text="Go to Device Info" />
 
+            <Button Command="{Binding GoToListViewInformationPageCommand}"
+                    Text="Go to ListView Navigation"/> 
+
         </StackLayout>
     </ScrollView>
 </ContentPage>

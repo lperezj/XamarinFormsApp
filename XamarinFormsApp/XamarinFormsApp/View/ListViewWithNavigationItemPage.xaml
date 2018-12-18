@@ -1,12 +1,27 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:Xamarin.Forms.ToolKit.Behaviors;assembly=Xamarin.Forms.ToolKit.Behaviors"
              x:Class="XamarinFormsApp.View.ListViewWithNavigationItemPage"
              BindingContext="{Binding Source={StaticResource Locator}, Path=ListViewWithNavigationItemVm}">
-    
-    <ContentView.Content>
-      <ListView>
 
-      </ListView>
-  </ContentView.Content>
-</ContentView>
+    <ContentView x:Name="contentView"
+                 ControlTemplate="{StaticResource MyTemplate}">
+
+        <ListView VerticalOptions="CenterAndExpand"
+                  HorizontalOptions="CenterAndExpand"
+                  ItemsSource="{Binding Items}">
+
+            <ListView.Behaviors>
+                <behaviors:EventToCommandBehavior EventName="ItemTapped"
+                                          Command="{Binding SelectedItemCommand}"
+                                          CommandParameter="{Binding .}"
+                                          EventArgsConverter="{StaticResource SelectedItemConverter}"/>
+
+            </ListView.Behaviors>
+
+        </ListView>
+
+    </ContentView>
+
+</ContentPage>

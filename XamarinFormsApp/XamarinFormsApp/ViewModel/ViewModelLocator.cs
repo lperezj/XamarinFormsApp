@@ -52,6 +52,7 @@ namespace XamarinFormsApp.ViewModel
         public DeviceInfoPageViewModel DeviceInfoVm => ServiceLocator.Current.GetInstance<DeviceInfoPageViewModel>();
 
         public ListViewWithNavigationItemViewModel ListViewWithNavigationItemVm => ServiceLocator.Current.GetInstance<ListViewWithNavigationItemViewModel>();
+        
         #endregion
 
         #region Public Methods

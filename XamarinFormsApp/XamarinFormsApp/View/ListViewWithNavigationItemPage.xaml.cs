@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace XamarinFormsApp.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ListViewWithNavigationItemPage : ContentView
+    public partial class ListViewWithNavigationItemPage : ContentPage
     {
         public ListViewWithNavigationItemPage()
         {

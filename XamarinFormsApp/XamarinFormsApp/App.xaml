@@ -2,8 +2,11 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModel="clr-namespace:XamarinFormsApp.ViewModel;assembly=XamarinFormsApp"
+             xmlns:converters="clr-namespace:Xamarin.Forms.ToolKit.Converters;assembly=Xamarin.Forms.ToolKit.Converters"
              x:Class="XamarinFormsApp.App">
     <Application.Resources>
+        <viewModel:ViewModelLocator x:Key="Locator" />
+
         <Style x:Key="HeaderTitleStyle"
                TargetType="Label">
             <Setter Property="HorizontalOptions"
@@ -51,6 +54,58 @@
                     Value="12">
             </Setter>
         </Style>
-        <viewModel:ViewModelLocator x:Key="Locator" />
+
+        <Style x:Key="LbWhiteStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="17" />
+            <Setter Property="TextColor" Value="#FFFFFF" />
+        </Style>
+
+        <Style x:Key="LbGrayStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="Small"/>
+            <Setter Property="Margin" Value="0,7,0,7"/>
+            <Setter Property="TextColor" Value="#23282d"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+
+        <Style x:Key="BtnPink" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#7E1335"/>
+            <Setter Property="HeightRequest" Value="60"/>
+            <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+            <Setter Property="TextColor" Value="White"/>
+        </Style>
+
+        <Style x:Key="BtnGray" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#23282d"/>
+            <Setter Property="HeightRequest" Value="60"/>
+            <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+            <Setter Property="TextColor" Value="White"/>
+        </Style>
+
+        <ControlTemplate x:Key="MyTemplate">
+            <StackLayout VerticalOptions="FillAndExpand">
+                <StackLayout x:Name="stlHeader" 
+                                HeightRequest="90"
+                                BackgroundColor="#23282d"
+                                Orientation="Horizontal">
+
+                    <StackLayout x:Name="stlDetails" 
+                                     VerticalOptions="Center">
+
+                        <Label x:Name="lbTitle"
+                                   Style="{StaticResource LbWhiteStyle}"
+                                   Text="Xamarin.Forms.Toolkit.Behaviors"/>
+
+                        <Label x:Name="lbDescription"
+                                   Font="Bold"
+                                   Style="{StaticResource LbWhiteStyle}"
+                                   Text="Behaviors for Xamarin.Forms"/>
+                    </StackLayout>
+                </StackLayout>
+                <ContentPresenter VerticalOptions="FillAndExpand"/>
+            </StackLayout>
+
+        </ControlTemplate>
+
+       
     </Application.Resources>
 </Application>

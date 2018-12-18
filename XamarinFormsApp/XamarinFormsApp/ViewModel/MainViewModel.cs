@@ -55,6 +55,8 @@ namespace XamarinFormsApp.ViewModel
 
         public ICommand OnAppearingCommand { get; }
 
+        public ICommand GoToListViewInformationPageCommand { get; }
+
         #endregion
 
         #region Public Constructors
@@ -65,9 +67,13 @@ namespace XamarinFormsApp.ViewModel
             this.OnAppearingCommand = new Command(async () => await this.OnAppearing());
             this.GoToReverseStringPageCommand = new Command(this.NavigateToReverse);
             this.GoToDeviceInfoPageCommand = new Command(this.NavigateToDeviceInfo);
+            this.GoToListViewInformationPageCommand = new Command(this.NavigateToListView);
         }
 
-
+        private void NavigateToListView()
+        {
+            this.NavigationService.NavigateTo(AppConstants.NavigationPages.ListViewWithNavigationItemPage);
+        }
 
         private void NavigateToReverse()
         {
